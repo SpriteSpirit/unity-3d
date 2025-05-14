@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CameraControllerShooter : MonoBehaviour
 {
-    private float horizontalSpeed = 9f;
-    private float verticalSpeed = 9f;
+    private float horizontalSpeed = 5f;
+    private float verticalSpeed = 5f;
 
     private float verticalMinAngle = -45f;
     private float verticalMaxAngle = 45f;

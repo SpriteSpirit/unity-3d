@@ -9,7 +9,7 @@ using TMPro;
 public class GameManager2 : MonoBehaviour
 {
     [SerializeField] PlayerRunner player_movement;
-    //[SerializeField] float levelRestartDelay = 2f; // время перезагрузки в секундах
+    //[SerializeField] float levelRestartDelay = 2f; // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     [SerializeField] Text time_text;
     [SerializeField] Text score_text;
     //private Camera main_camera;
@@ -28,8 +28,8 @@ public class GameManager2 : MonoBehaviour
 
     public void game_over()
     {
-        player_movement.enabled = false; // отключаем движение игрока
-                                         // переключаем активную камеру на Death Camera
+        player_movement.enabled = false; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+                                         // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ Death Camera
                                          //  main_camera.gameObject.SetActive(false);
                                          //  death_camera.gameObject.SetActive(true);
         Debug.Log("Game over");
@@ -39,13 +39,13 @@ public class GameManager2 : MonoBehaviour
         jsonManager.SaveData();
 
         //Animation.Play("Die");
-        Invoke("RestartLevel", 2f); // вызываем метод рестарт через опред. время
+        Invoke("RestartLevel", 2f); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅпїЅ
     }
 
     void RestartLevel()
     {
         StartCoroutine(timer(1.0f));
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // перезапускает текущий уровень
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
     }
 
@@ -64,26 +64,27 @@ public class GameManager2 : MonoBehaviour
 
     public void updateLifeUI()
     {
-        // Удаляем все существующие спрайты на панели
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         foreach (Transform child in panel.transform)
         {
             Destroy(child.gameObject);
         }
 
-        // Создаем и отображаем спрайты жизней на панели
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         for (int i = 0; i < jsonManager.lives; i++)
         {
             GameObject live = new GameObject("LifeSprite");
             live.transform.SetParent(panel.transform);
+
             Image lifeSprite = live.AddComponent<Image>();
-            lifeSprite.sprite = sprite; // Здесь установите созданный спрайт для жизни
+            lifeSprite.sprite = sprite; // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 
             RectTransform rectTransform = live.GetComponent<RectTransform>();
             rectTransform.sizeDelta = new Vector2(60, 70);
         }
     }
 
-    // таймер счета
+    // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     IEnumerator timer(float waitTime)
     {
         while (true)

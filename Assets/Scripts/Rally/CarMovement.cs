@@ -141,9 +141,9 @@ public class CarMovement : MonoBehaviour // Объявление класса CarMovement, насле
 
     void OnTriggerEnter(Collider other) // Не забудь добавить Collider с галочкой isTrigger
     {
-        if (other.CompareTag("Block")) // Предполагаем, что у машины тег "Player"
+        if (other.CompareTag("Checkpoint")) // Предполагаем, что у машины тег "Player"
         {
-            Debug.Log("Block");
+            Debug.Log("Checkpoint");
             manager.CheckpointReached(other.gameObject);
         }
 

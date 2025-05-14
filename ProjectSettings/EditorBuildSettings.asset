@@ -6,17 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Space/Level 1.unity
-    guid: 859701ebcde2c3d4793a64193e36c254
+    path: Assets/Scenes/Hunter/Level 1.unity
+    guid: 38e7576de03f5964dac29df5014be129
   - enabled: 1
-    path: Assets/Scenes/Space/Level 2.unity
-    guid: 546b628d9ae20a74e830d7fcf6b2d3b0
+    path: Assets/Scenes/Hunter/Level 2.unity
+    guid: 540c87b5164cd7f4eb46558e41987721
   - enabled: 1
-    path: Assets/Scenes/Space/Level 3.unity
-    guid: 3edd623fe1b056848a6838c5218642b1
-  - enabled: 1
-    path: Assets/Scenes/Space/Level 4.unity
-    guid: 6f3cf4eeb03dbc3499137c2fae7e8b40
+    path: Assets/Scenes/Hunter/Level 3.unity
+    guid: f0daae87bdce20145a986b5b6d8bd305
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000,
       guid: 9d68627ab93d2754dae6916e33866218, type: 2}
@@ -28,3 +25,6 @@ EditorBuildSettings:
       guid: 341c93ada4b8cc8468243869f60a8cf1, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: 9eb07e2d669e9c94e9d7d3c782a916f7,
       type: 2}
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: c55ade6eb1f78f54fbbb9a6424cf3406,
+      type: 3}
+  m_UseUCBPForAssetBundles: 0

@@ -13,6 +13,7 @@ public class Photograph : MonoBehaviour
 
     void Start()
     {
+
     }
 
     void Update()

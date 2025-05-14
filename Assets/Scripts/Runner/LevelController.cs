@@ -33,7 +33,7 @@ public class LevelController : MonoBehaviour
             SpawnLevel(Random.Range(0, levelPrefab.Count));
         }
 
-        // ѕроходим по каждому уровеню в списке (от 0 до длины списка)
+        // ѕроходим по каждому уровню в списке (от 0 до длины списка)
         for (int i = 0; i < levels.Count; i++)
         {
             // Ћокальна€ переменна€ level определ€етс€ по индексу элемента в списке 

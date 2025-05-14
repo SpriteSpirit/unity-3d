@@ -11,9 +11,15 @@ public class Buttons : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void NextLevel()
     {
-        
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
+        int totalScene = SceneManager.sceneCountInBuildSettings;
+        Debug.Log("Количество сцен: " + totalScene);
+
+        if (currentScene < totalScene - 1)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 }

@@ -5,20 +5,31 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class GameManager: MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     [SerializeField]
     private List<GameObject> checkpointBlocks; // Список checkpoint блоков
-
+    //public GameObject[] array;
     public Text textCircle;
     public int nextCheckpointIndex = 0;
     public int completedCircles = 0;
 
     public Button button;
 
+    private void Start()
+    {
+        GameObject allPoints = GameObject.FindGameObjectWithTag("Points");
+
+        foreach (Transform point in allPoints.transform)
+        {
+            checkpointBlocks.Add(point.gameObject);
+        }
+    }
+
     private void Update()
     {
         textCircle.text = "ROUND: " + completedCircles;
+        //Array.Reverse(array);
     }
 
     public void CheckpointReached(GameObject checkpointBlock)
@@ -29,21 +40,27 @@ public class GameManager: MonoBehaviour
             checkpointBlock.GetComponent<Renderer>().material.color = Color.green;
 
             // Переходим к следующему checkpoint
-            nextCheckpointIndex++;
+            if (nextCheckpointIndex != checkpointBlocks.Count)
+            {
+                nextCheckpointIndex++;
+            }
+
             Debug.Log(nextCheckpointIndex);
         }
     }
 
     public void FinishLineReached(GameObject finishBlock)
     {
-        // Проверяем, все ли checkpoint'ы были коснуты перед финишем
+        // Проверяем, все ли checkpoints были задеты перед финишем
         if (nextCheckpointIndex == checkpointBlocks.Count)
         {
             //finishBlock.GetComponent<Collider>().isTrigger = false;
             finishBlock.GetComponent<Renderer>().material.color = Color.black;
             Debug.Log(finishBlock.name);
             Debug.Log("Круг завершен!");
+
             completedCircles++;
+
             StartCoroutine(timer(0.5f, finishBlock));
         }
     }

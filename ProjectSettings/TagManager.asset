@@ -19,6 +19,7 @@ TagManager:
   - Block
   - Waypoints
   - AimCamera
+  - Points
   layers:
   - Default
   - TransparentFX

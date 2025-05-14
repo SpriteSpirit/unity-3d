@@ -17,7 +17,7 @@ public class BulletMovement: MonoBehaviour
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManagerTest>();
         list = GameObject.Find("Main Camera").GetComponent<TargetList>();
-        // Вычисляем направление от текущей позиции пули к bulletSpawner
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ bulletSpawner
         bulletSpawnerPos = GameObject.Find("BulletSpawner").transform;
         rb = GetComponent<Rigidbody>();
     }
@@ -25,8 +25,8 @@ public class BulletMovement: MonoBehaviour
 
     void Update()
     {
-        // Задаем скорость пули в этом направлении
-        rb.velocity = bulletSpawnerPos.forward * speed;
+        // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+        rb.linearVelocity = bulletSpawnerPos.forward * speed;
        // Invoke("FreeMovement", 2f);
         //transform.Translate(Vector3.up * speed * Time.deltaTime);
 
@@ -49,7 +49,7 @@ public class BulletMovement: MonoBehaviour
 
     private void FreeMovement()
     {
-        rb.velocity = Vector3.zero;
+        rb.linearVelocity = Vector3.zero;
         transform.Translate(Vector3.up * speed * Time.deltaTime);
     }
 }
